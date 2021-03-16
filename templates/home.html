@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<style>
+		body{
+			
+			background-image:url("{% static 'img/2.jpg' %}");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 1400px 700px;
+		}
+	</style>
+<head>
+	<title></title>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+
+<body>
+<h1>"Conocete" Libreria</h1>
+<h2>Encuentra El Libro Que Has Estado Buscando  </h2>
+<br><br><br>
+
+
+
+<ul id="lista1">
+	<br><br><br><br>
+	{%for post in Listado %}
+		<li id="li_titulo">{{ post.text }}</li>
+		<br>
+		
+		<li id="li_descrip">{{ post.descrpicion }}</li>
+		<br>
+		<img src = {{post.img}} id="imagen_1">
+		<br>
+    {% endfor %}
+	
+</ul>
+<div id="prin">
+	<div id="div1"><img src="{% static 'img/3.jpg '%}" id="imagen_3"></div>
+	<div id="div2"><h3>Encuentranos en:</h3></div>
+	<h3>Ciudad:Torreon <br> Colonia: centro #153 ote <br> calle matamoros frente al siglo de torreon<br>Tel: 87-14-55-15-20</h3>
+	
+	</div>
+
+</body>
+</html>
